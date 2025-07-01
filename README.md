@@ -28,7 +28,7 @@ This is the official implementation for the paper "*Rethink Sparse Signals for P
 
 ## :sparkles: Highlight
 
-![figure_1](.\assets\figure_1.png)
+![figure_1](assets\figure_1.png)
 
 - **We rethink the sparse signals for pose-guided T2I generation and propose *SP-Ctrl*,** a spatial-pose ControlNet that enables precise pose alignment with sparse signals. It reveals the potential of sparse signals in spatially controllable generations. 
 - **A Spatial-Pose Representation for better pose instructions**. We introduce a Spatial-Pose Representation with learnable keypoint embeddings to enhance the expressiveness of sparse pose signals.
