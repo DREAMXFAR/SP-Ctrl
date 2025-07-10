@@ -1,0 +1,18 @@
+# 
+.idea/
+
+# python
+**/__pycache__/
+
+
+# ignore dirs
+condition_val
+controlnet_checkpoints/
+demo/
+eval_res/
+
+metrics/FID/fid_stats/
+output_dir/
+test_example/
+wandb/
+
