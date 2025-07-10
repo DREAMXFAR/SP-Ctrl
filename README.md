@@ -156,39 +156,60 @@ You can download the following checkpoints and put them in `controlnet_checkpoin
 
    > **basic configurations**
    >
-   >  `--pretrained_model_name_or_path` # Path to pretrained model or model identifier from uggingface.co/models.
-   >  `--controlnet_model_name_or_path` # Path to pretrained controlnet model or model identifier from huggingface.co/models. If not specified controlnet weights are initialized from unet.
-   >  `--output_dir` # The output directory where the model predictions and checkpoints will be written.
-   >  `--dataset_name` # Set datset, e.g. ap10k or humanart
-   >  `--conditioning_mode` # Set the condition mode for custom offline dataset, e.g. spatext or openpose.
-   >  `--use_extra_mask` # Whether to add extra mask conditions
+   > `--pretrained_model_name_or_path` # Path to pretrained model or model identifier from uggingface.co/models.
    >
+   > `--controlnet_model_name_or_path` # Path to pretrained controlnet model or model identifier from huggingface.co/models. If not specified controlnet weights are initialized from unet.
    >
-   >  **Spatext related configurations**
+   > `--output_dir` # The output directory where the model predictions and checkpoints will be written.
    >
-   >  `--add_keypoint_prompt` # The percentage of adding keypoint names to prompt
-   >  `--enable_learnable_kpttoken`  # Use learnble textual embeddings of the keypoint name text.
-   >  `--spatext_cond_channels` the  # num of output channel for spatext_embedding layer.
-   >  `--spatext_init_emb`  # the initial spatext embedding, None for random, or `xxx.bin` to load.
-   >  `--spatext_skeleton_type`  # SPATEXT_SKELETON_TYPE, the skeleton embedding.
-   >  `--spatext_enable_learn_kpt`  # If True, let the model learn spatext embedding of the keypoint.
-   >  `--spatext_enable_learn_sks`  # If True, let the model learn spatext embedding of the skeleton.
-   >  `--spatext_detach_kpt_grad_from_sks`  # If true, detach the gradient from keypoint interpolation.
-   >  `--spatext_freeze_embedding`  # If true, freeze the parameters of the spatext embedding layers
-   >  `--spatext_layer_version`  # {sigmoid_version} the spatext embedding layer version
+   > `--dataset_name` # Set datset, e.g. ap10k or humanart
    >
-   >  **Cross-attention loss configurations**
+   > `--conditioning_mode` # Set the condition mode for custom offline dataset, e.g. spatext or openpose.
    >
-   >  `--add_cross_attn_loss` # Add cross-attention loss.
-   >  `--attn_loss_weight` # Weight for cross-attention loss, only work when add_cross_attn_loss=True.
-   >  `--heatmap_type` # the heatmap type, use the `whole` or `partition` heatmap
-   >  `--attn_loss_type` # the type of cross-attention map loss, bce or mse, default mse. 
-   >  `--attn_loss_start_timestep` # From this timestep to compute cross-attention loss.
-   >  `--attn_loss_end_timestep` # To this timestep, stop to compute the cross-attention loss.
-   >  `--attn_loss_select_layer_type` # Select only some layers to compute the cross-attention loss.{down_blocks.0,down_blocks.1,down_blocks.2,mid_block}
+   > `--use_extra_mask` # Whether to add extra mask conditions
+   >
+   > **Spatext related configurations**
+   >
+   > `--add_keypoint_prompt` # The percentage of adding keypoint names to prompt
+   >
+   > `--enable_learnable_kpttoken`  # Use learnble textual embeddings of the keypoint name text.
+   >
+   > `--spatext_cond_channels` the  # num of output channel for spatext_embedding layer.
+   >
+   > `--spatext_init_emb`  # the initial spatext embedding, None for random, or `xxx.bin` to load.
+   >
+   > `--spatext_skeleton_type`  # SPATEXT_SKELETON_TYPE, the skeleton embedding.
+   >
+   > `--spatext_enable_learn_kpt`  # If True, let the model learn spatext embedding of the keypoint.
+   >
+   > `--spatext_enable_learn_sks`  # If True, let the model learn spatext embedding of the skeleton.
+   >
+   > `--spatext_detach_kpt_grad_from_sks`  # If true, detach the gradient from keypoint interpolation.
+   >
+   > `--spatext_freeze_embedding`  # If true, freeze the parameters of the spatext embedding layers
+   >
+   > `--spatext_layer_version`  # {sigmoid_version} the spatext embedding layer version
+   >
+   > **Cross-attention loss configurations**
+   >
+   > `--add_cross_attn_loss` # Add cross-attention loss.
+   >
+   > `--attn_loss_weight` # Weight for cross-attention loss, only work when add_cross_attn_loss=True.
+   >
+   > `--heatmap_type` # the heatmap type, use the `whole` or `partition` heatmap
+   >
+   > `--attn_loss_type` # the type of cross-attention map loss, bce or mse, default mse. 
+   >
+   > `--attn_loss_start_timestep` # From this timestep to compute cross-attention loss.
+   >
+   > `--attn_loss_end_timestep` # To this timestep, stop to compute the cross-attention loss.
+   >
+   > `--attn_loss_select_layer_type` # Select only some layers to compute the cross-attention loss.{down_blocks.0,down_blocks.1,down_blocks.2,mid_block}
+   >
    > `--attn_loss_detach_query` # Detach the loss backward to init noise in attention map.
-   >  `--text_encoder_lr` # learning rate for text encoder.
-   >  `--text_encoder_lr_scheduler` # set the learning rate schedule for text_encoder.
+   > `--text_encoder_lr` # learning rate for text encoder.
+   >
+   > `--text_encoder_lr_scheduler` # set the learning rate schedule for text_encoder.
 
 #### Inference
 
@@ -218,9 +239,9 @@ You can download the following checkpoints and put them in `controlnet_checkpoin
 
 #### Evaluation
 
-1. Here are codes for evaluating with [ViTPose](https://github.com/ViTAE-Transformer/ViTPose).  To run the evaluation, you need to prepare the environment for ViTPose following the instructions [here](and put our checkpoints under `./checkpoints`. ). 
+1. Here are codes for evaluating with [ViTPose](https://github.com/ViTAE-Transformer/ViTPose).  To run the evaluation, you need to prepare the environment for ViTPose following the instructions [here](https://github.com/ViTAE-Transformer/ViTPose?tab=readme-ov-file#usage), and put our checkpoints under `./checkpoints`. 
 
-1. Download the pre-trained ViTPose checkpoints. We use the official pre-trained [ViTPose+-H](and put our checkpoints under `./checkpoints`. ) for AP-10K, and mmpose [ViTPose-H-humanart-coco](https://mmpose.readthedocs.io/en/latest/model_zoo/body_2d_keypoint.html#topdown-heatmap-vitpose-on-humanart). 
+1. Download the pre-trained ViTPose checkpoints. We use the official pre-trained [ViTPose+-H](https://github.com/ViTAE-Transformer/ViTPose?tab=readme-ov-file#animal-datasets-ap10k-apt36k) for AP-10K, and mmpose [ViTPose-H-humanart-coco](https://mmpose.readthedocs.io/en/latest/model_zoo/body_2d_keypoint.html#topdown-heatmap-vitpose-on-humanart). 
 
 1. Run the test with provided scripts. We provide our config files of ViTPose under `tools/eval_vitpose_metrics/config` for reference. We recommend users to have a look at the codes before running them. 
 
@@ -238,7 +259,7 @@ You can download the following checkpoints and put them in `controlnet_checkpoin
 
 > For more details, you can refer to our paper. 
 
-![vis-sota](F:\exp_record\SparsePoseCtrlNet\github_release\SP-Ctrl-main_250709\assets\vis-sota.png)
+![vis-sota](.\assets\vis-sota.png)
 
 | Dataset      | Method      | Pose mAP  | FID       | CLIP-Score |
 | ------------ | ----------- | --------- | --------- | ---------- |
@@ -259,15 +280,15 @@ You can download the following checkpoints and put them in `controlnet_checkpoin
 
 1. Our method can synthesize images with precisely aligned poses and diverse shapes. 
 
-   ![vis-diversity](F:\exp_record\SparsePoseCtrlNet\github_release\SP-Ctrl-main_250709\assets\vis-diversity.png)
+   ![vis-diversity](.\assets\vis-diversity.png)
 
 2. Our method can realize cross-species generation with accurate pose control.
 
-   ![vis-cross-species](F:\exp_record\SparsePoseCtrlNet\github_release\SP-Ctrl-main_250709\assets\vis-cross-species.png)
+   ![vis-cross-species](.\assets\vis-cross-species.png)
 
 3. Enjoying the sparse pose, our method is more friendly to pose editing. 
 
-   ![vis-editing](F:\exp_record\SparsePoseCtrlNet\github_release\SP-Ctrl-main_250709\assets\vis-editing.png)
+   ![vis-editing](.\assets\vis-editing.png)
 
 
 
