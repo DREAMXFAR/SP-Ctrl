@@ -259,7 +259,7 @@ You can download the following checkpoints and put them in `controlnet_checkpoin
 
 > For more details, you can refer to our paper. 
 
-![vis-sota](.\assets\vis-sota.png)
+![vis-sota](./assets/vis-sota.png)
 
 | Dataset      | Method      | Pose mAP  | FID       | CLIP-Score |
 | ------------ | ----------- | --------- | --------- | ---------- |
@@ -280,15 +280,15 @@ You can download the following checkpoints and put them in `controlnet_checkpoin
 
 1. Our method can synthesize images with precisely aligned poses and diverse shapes. 
 
-   ![vis-diversity](.\assets\vis-diversity.png)
+   ![vis-diversity](./assets/vis-diversity.png)
 
 2. Our method can realize cross-species generation with accurate pose control.
 
-   ![vis-cross-species](.\assets\vis-cross-species.png)
+   ![vis-cross-species](./assets/vis-cross-species.png)
 
 3. Enjoying the sparse pose, our method is more friendly to pose editing. 
 
-   ![vis-editing](.\assets\vis-editing.png)
+   ![vis-editing](./assets/vis-editing.png)
 
 
 
