@@ -14,7 +14,7 @@ This is the official implementation for the paper "*Rethink Sparse Signals for P
 
 ## :fire: News
 
-- **[2025/07/06]**: The codes for training, inference, evaluation, and visualization are released. Some checkpoints are available on AP-10K and HumanArt.  
+- **[2025/07/10]**: The codes for training, inference, evaluation, and visualization are released. Some checkpoints are available on AP-10K and HumanArt.  
 - **[2025/06/26]**: Our work is accepted by ICCV 2025. We are preparing to release the code in a few weeks. 
 
 
